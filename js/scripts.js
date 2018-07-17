@@ -96,10 +96,13 @@ titles.push(favMovies[0][0], favMovies[1][0], favMovies[2][0]);
 
 let favAndLeast = [];
 favAndLeast.push(favMovies[0], favMovies[4]);
-console.log(favAndLeast);
+// console.log(favAndLeast);
 /*
 4. Check the length of your favoriteMovies array by alerting it.
 */
-alert(favMovies.length);
+// alert(favMovies.length);
 
-// LOOPS...
+// LOOPS...ARE GREAT
+for (let i = 0; i < favMovies.length; i++) {
+  if(favMovies[i][0] === "Stay") alert(`${favMovies[i][0]} ${favMovies[i][1]}`);
+}
