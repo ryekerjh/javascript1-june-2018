@@ -19,6 +19,14 @@ function User(name, email, password, favorites, cart) {
   this.cart = cart;
 }; //4th way to bind THIS
 
+User.prototype.calculateCartTotal = function() {
+  let total = 0;
+  this.cart.forEach(item => {
+    total += item.price;
+  });
+  return total;
+};
+
 let cody = new User("Cody", "code-man-5000@gmail.com", "123456", [], []);
 // console.log(cody);
 // console.log(Object.getPrototypeOf(cody));
@@ -26,6 +34,7 @@ let ryeker = new User("Ryeker", "best_teach@truth.com", "11111", [], []);
 ryeker.isAdmin = true; //dot notation
 ryeker["isAdmin"] = false //bracket notation
 // ryeker["42"] = false;
+
 console.log(ryeker, cody);
 
 //TRY IT OUT: build a new user with data collected from a form in HTML and your user PROTOTYPE
